@@ -6,14 +6,14 @@
 ## makeCacheMatrix creates a 'special' matrix that consists of 4 functions to 
 ## set and get the values of a matrix and the matrix's inverse to/from cache
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(A = matrix()) {
     B <- NULL
     set <- function(y) {
         A <<- y
         B <<- NULL
     }
     get <- function() A
-    setinverse <- function(inverse) B <<- inverse
+    setinverse <- function(solve) B <<- solve
     getinverse <- function() B
     list(set = set, get = get,
          setinverse = setinverse,
